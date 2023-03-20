@@ -1,4 +1,4 @@
-# Rust WinIt wgpu library for Desktop Applications - ggprahics
+# Rust library with winit wgpu for Desktop Applications - ggprahics
 ggprahics is a Rust library that uses WinIt and wgpu to create desktop applications. Unlike other normal libraries, ggprahics has a unique approach of imitating the design of HTML and CSS. This allows users to reuse the majority of their HTML and CSS code and easily convert it into Rust code.
 
 # Installation
