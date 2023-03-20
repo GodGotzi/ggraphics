@@ -1,1 +1,1 @@
-C:\Users\Elias\rust\ggraphics\target\debug\ggraphics.exe: C:\Users\Elias\rust\ggraphics\src\main.rs
+C:\Users\eligo\Desktop\ggraphics\target\debug\ggraphics.exe: C:\Users\eligo\Desktop\ggraphics\src\main.rs C:\Users\eligo\Desktop\ggraphics\src\style\components.rs C:\Users\eligo\Desktop\ggraphics\src\style\mod.rs C:\Users\eligo\Desktop\ggraphics\src\style\property\mod.rs
