@@ -1,13 +1,27 @@
+use std::option::Option;
+use std::collections::Vec;
+use core::{ Div };
+
 trait Component {
-    fn get_width(&self) -> u32;
-    fn get_height(&self) -> u32;
-    fn get_dimension(&self) -> (u32, U32);
-    fn get_position_screen(&self) -> (u32, u32);
-    fn get_parent_screen(&self) -> &ComponentScreen;
-    fn get_screen() -> &ComponentScreen;
+    pub fn get_parent(&self) -> &Component;
+    fn set_parent(&self, parent: &Component);
 }
 
-pub struct ComponentScreen {
-    parent: &Component,
-    childs: Vec<Component>,
+impl Component for Div {
+    fn new() -> Div {
+        let childs: Vec<Component> = Vec::new();
+        
+        Div {
+            parent: None,
+            childs
+        }
+    }
+    
+    fn get_parent(&self) -> &Component {
+        self.parent
+    }
+
+    fn set_parent(&mut self, parent: &Component) {
+        self.parent = parent;
+    }
 }

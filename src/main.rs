@@ -1,27 +1,16 @@
 mod style;
 
-use winit::window::WindowBuilder;
-use winit::dpi::LogicalSize;
-use winit::event_loop::EventLoop;
+use pronto_graphics::Window;
+use pronto_graphics::Color;
 
 fn main() {
-    let event_loop = EventLoop::new();
-    let _window = WindowBuilder::new()
-        .with_title("My Window")
-        .with_decorations(false)
-        .with_inner_size(LogicalSize::new(800, 600))
-        .build(&event_loop)
-        .unwrap();
+    let mut pg = Window::new(800, 600, "Circles!");
 
-    event_loop.run(move |event, _, control_flow| {
-        *control_flow = winit::event_loop::ControlFlow::Wait;
-
-        match event {
-            winit::event::Event::WindowEvent { event, .. } => match event {
-                winit::event::WindowEvent::CloseRequested => *control_flow = winit::event_loop::ControlFlow::Exit,
-                _ => (),
-            },
-            _ => (),
-        }
-    });
+    loop {
+        pg.circle((100., 100.), 15.);
+        pg.fill_color(Color::BLUE);
+        pg.circle((300., 450.), 24.);
+        
+        pg.update();
+    }
 }
