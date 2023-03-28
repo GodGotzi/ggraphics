@@ -1,6 +1,6 @@
 use crate::core::component::{ Component };
 
 pub trait Container : Component {
-    fn addChild(&self);
-    fn removeChild<T: Component>(&mut self, component: &T);
+    fn add_child(&self);
+    fn remove_child<T: Component>(&mut self, component: &T);
 }

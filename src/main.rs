@@ -13,18 +13,19 @@ use winit::{
 pub async fn run() {
     env_logger::init();
 
-    let mut state = State::new(window).await;
     let event_loop = EventLoop::new();
     let window = WindowBuilder::new()
         .with_title("test - window")
         .build(&event_loop).unwrap();
+
+    let mut state = State::new(window).await;
 
     event_loop.run(move |event, _, control_flow| 
         match event {
             Event::WindowEvent {
                 ref event,
                 window_id,
-            } if window_id == window.id() => if !state.input(event) {
+            } if window_id == state.window().id() => if !state.input(event) {
                 match event {
                     WindowEvent::CloseRequested
                     | WindowEvent::KeyboardInput {

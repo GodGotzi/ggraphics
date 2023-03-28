@@ -15,11 +15,11 @@ impl<T: Container> Component<T> for Div {
         self.parent = parent;
     }
 
-    fn addChild(&mut self, component: T) {
+    fn add_child(&mut self, component: T) {
         
     }
 
-    fn removeChild(&mut self, component: &T) {
+    fn remove_child(&mut self, component: &T) {
         
     }
 }
