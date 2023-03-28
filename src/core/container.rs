@@ -1,16 +1,6 @@
-use core::component::{ Div };
+use crate::core::component::{ Component };
 
-trait Container {
-    pub fn addChild(&self);
-    pub fn removeChild(&mut self, component: &Component);
-}
-
-impl Container for Div {
-    fn addChild(&mut self, component: Component) {
-        
-    }
-
-    fn removeChild(&mut self, component: &Component) {
-        
-    }
+pub trait Container : Component {
+    fn addChild(&self);
+    fn removeChild<T: Component>(&mut self, component: &T);
 }

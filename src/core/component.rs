@@ -1,27 +1,6 @@
-use std::option::Option;
-use std::collections::Vec;
-use core::{ Div };
+use super::container::Container;
 
-trait Component {
-    pub fn get_parent(&self) -> &Component;
-    fn set_parent(&self, parent: &Component);
-}
-
-impl Component for Div {
-    fn new() -> Div {
-        let childs: Vec<Component> = Vec::new();
-        
-        Div {
-            parent: None,
-            childs
-        }
-    }
-    
-    fn get_parent(&self) -> &Component {
-        self.parent
-    }
-
-    fn set_parent(&mut self, parent: &Component) {
-        self.parent = parent;
-    }
+pub trait Component {
+    fn get_parent<T: Container>(&self) -> &T;
+    fn set_parent<T: Container>(&self, parent: &T);
 }
